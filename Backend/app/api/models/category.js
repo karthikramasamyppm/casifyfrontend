@@ -10,6 +10,11 @@ const CategorySchema = new Schema({
 		trim: true,		
 		required: true,
 	},
+	filename: { 
+		type: String,
+		trim: true,		
+		required: true,
+	},
             
 }, {
     timestamps: true

@@ -1,11 +1,16 @@
-const categoryModel = require('../models/category');	
+const categoryModel = require('../models/category');
+
+  
+  
 module.exports = {
 
     create: function(req, res, next) {
-		categoryModel.create({ name: req.body.name }, function (err, result) {
+		categoryModel.create({ name: req.body.name,filename:req.file.filename },function (err, result) {
 				  if (err) 
 				  	next(err);
 				  else
+					  console.log(req.files);
+					  console.log(res)
 				  	res.json({status: "success", message: "category added successfully!!!", data: null});
 				  
 				});
